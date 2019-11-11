@@ -27,7 +27,10 @@
     <section class="superhero-assign">
         <h2>Call a superhero</h2>
 
-        <form action="" method="post">
+        <form action="{{  action('SuperheroController@store')  }}" method="post">
+            @csrf
+
+            <input type="hidden" name="superhero_id" value="{{$superhero->id}}">
 
             <input type="text" name="subject" placeholder="What's your crisis?">
 

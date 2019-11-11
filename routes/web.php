@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('selection');
+})->name('index');
+
+Route::get('/superhero', 'SuperheroController@index');
+Route::get('/superhero/{name}', 'SuperheroController@show');
+Route::post('/superhero/help', 'SuperheroController@store');
 
 Auth::routes();
